@@ -1,4 +1,6 @@
-mmcv
+mmcv==0.4.0
 torch>=1.1
-torchvision
+torchvision==0.4.0
 lazy_import
+Cython
+pycocotools
