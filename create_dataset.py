@@ -22,8 +22,8 @@ def create_dataset(name='custom_data', keep=None, remove_joint=True, remove_conf
     print(f'Remove joints: {remove_joint}')
     print(f'Remove confidence: {remove_conf}')
     data_folder = './data'
-    remove_joints = [14,15] #LEye and REye
-    keep_indexes = [i for i in range(0,18) if i not in remove_joints]
+    to_remove = [14,15] #LEye and REye
+    keep_indexes = [i for i in range(0,18) if i not in to_remove]
 
     origin_path = f'{data_folder}/Kinetics/kinetics-skeleton'
     train_d = 'train_data.npy'
