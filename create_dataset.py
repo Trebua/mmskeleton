@@ -17,11 +17,10 @@ def remove_joints(narray):
 # keep: specifies how many samples to keep. None => all
 # remove_joint: removes joint specified in remove_joints in the function if True. Should probably always be eyes.
 # remove_conf: If True removes the 3rd channel which contains confidence values
-def create_dataset(name='custom_data', keep=5, remove_joint=True, remove_conf=True):
+def create_dataset(name='custom_data', keep=None, remove_joint=True, remove_conf=True):
     print('Starting processing.')
     print(f'Remove joints: {remove_join}')
     print(f'Remove confidence: {remove_conf}')
-    keep = 1000
     data_folder = './data'
     remove_joints = [14,15] #LEye and REye
     keep_indexes = [i for i in range(0,18) if i not in remove_joints]
