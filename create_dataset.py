@@ -9,7 +9,7 @@ def remove_confidence(narray):
     return narray[:, :2, :, :, :]
 
 # We want to remove the joins specified in remove_joints
-def remove_joints(narray):
+def remove_joints(narray, keep_indexes):
     return narray[:, :, :,keep_indexes,:]
 
 # Function for creating dataset
@@ -59,8 +59,8 @@ def create_dataset(name='custom_data', keep=None, remove_joint=True, remove_conf
         print('No confidence left')
     if remove_joint:
         print('\nRemoving joints (eyes)')
-        train_data = remove_joints(train_data)
-        val_data = remove_confidence(val_data)
+        train_data = remove_joints(train_data, keep_indexes=keep_indexes)
+        val_data = remove_joints(val_data, keep_indexes=keep_indexes)
         print('Blindness acheived')
 
     print('\nLoading labels')
