@@ -10,11 +10,11 @@ argparse_cfg:
   checkpoint:
     bind_to: processor_cfg.checkpoint
     help: the checkpoint file to load from
-    default: ./work_dir/recognition/no-eyes-no-conf/latest.pth
+    default: ./work_dir/recognition/no-conf/latest.pth
 
 processor_cfg:
   type: "processor.recognition.test"
-  checkpoint: ./work_dir/recognition/no-eyes-no-conf/latest.pth
+  checkpoint: ./work_dir/recognition/no-conf/latest.pth
 
   # model setting
   model_cfg:
@@ -23,14 +23,14 @@ processor_cfg:
     num_class: 400
     edge_importance_weighting: True
     graph_cfg:
-      layout: "openpose-no-eyes"
+      layout: "openpose"
       strategy: "spatial"
 
   # dataset setting
   dataset_cfg:
     type: "deprecated.datasets.skeleton_feeder.SkeletonFeeder"
-    data_path: ./data/no-eyes-no-conf/val_data.npy
-    label_path: ./data/no-eyes-no-conf/val_label.pkl
+    data_path: ./data/no-conf/val_data.npy
+    label_path: ./data/no-conf/val_label.pkl
     # debug: true
 
   # dataloader setting

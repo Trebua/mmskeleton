@@ -5,7 +5,7 @@ argparse_cfg:
   work_dir:
     bind_to: processor_cfg.work_dir
     help: the dir to save logs and models
-    default: ./work_dir/recognition/no-eyes-no-conf
+    default: ./work_dir/recognition/no-conf
   batch_size:
     bind_to: processor_cfg.batch_size
   resume_from:
@@ -24,7 +24,7 @@ processor_cfg:
     num_class: 400
     edge_importance_weighting: True
     graph_cfg:
-      layout: 'openpose-no-eyes'
+      layout: 'openpose'
       strategy: 'spatial'
   loss_cfg:
     type: 'torch.nn.CrossEntropyLoss'
@@ -32,15 +32,15 @@ processor_cfg:
   # dataset setting
   dataset_cfg:
     - type: 'deprecated.datasets.skeleton_feeder.SkeletonFeeder'
-      data_path: ./data/no-eyes-no-conf/train_data.npy
-      label_path: ./data/no-eyes-no-conf/train_label.pkl
+      data_path: ./data/no-conf/train_data.npy
+      label_path: ./data/no-conf/train_label.pkl
       random_choose: True
       random_move: True
       window_size: 150
       # debug: true
     - type: 'deprecated.datasets.skeleton_feeder.SkeletonFeeder'
-      data_path: ./data/no-eyes-no-conf/val_data.npy
-      label_path: ./data/no-eyes-no-conf/val_label.pkl
+      data_path: ./data/no-conf/val_data.npy
+      label_path: ./data/no-conf/val_label.pkl
       # debug: true
 
   # dataloader setting
