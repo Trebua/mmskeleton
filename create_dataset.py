@@ -19,7 +19,7 @@ def remove_joints(narray):
 # remove_conf: If True removes the 3rd channel which contains confidence values
 def create_dataset(name='custom_data', keep=None, remove_joint=True, remove_conf=True):
     print('Starting processing.')
-    print(f'Remove joints: {remove_join}')
+    print(f'Remove joints: {remove_joint}')
     print(f'Remove confidence: {remove_conf}')
     data_folder = './data'
     remove_joints = [14,15] #LEye and REye
